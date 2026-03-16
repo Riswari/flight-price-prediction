@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
+from huggingface_hub import hf_hub_download
 
 # 1. Setup Pemetaan Durasi untuk Kombinasi Kota Asal, Kota Tujuan, dan Jumlah Transit
 duration_map = {
@@ -98,13 +99,16 @@ duration_map = {
     ('Mumbai', 'Kolkata', 'zero'): 2.6
 }
 
-# 2. Memuat Arsitektur Preprocessing dan Model
-def load_model_artifacts():
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    model = joblib.load(os.path.join(BASE_DIR, 'flight_price_prediction.joblib'))
-    return model
+# 2. Memuat Model
+@st.cache_resource
+def load_model():
+    path = hf_hub_download(
+        repo_id="Riswari/flight-price-prediction",
+        filename="model.joblib"
+    )
+    return joblib.load(path)
 
-model = load_model_artifacts()
+model = load_model()
 
 # 3. Merancang Antarmuka Pengguna (UI) Reaktif
 st.set_page_config(page_title="Prediksi Harga Tiket Pesawat", layout="centered")
