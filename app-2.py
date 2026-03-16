@@ -104,7 +104,7 @@ duration_map = {
 def load_model():
     path = hf_hub_download(
         repo_id="Riswari/flight-price-prediction",
-        filename="model.joblib"
+        filename="flight_price_prediction.joblib"
     )
     return joblib.load(path)
 
