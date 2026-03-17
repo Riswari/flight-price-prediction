@@ -33,16 +33,6 @@ Dataset berisi data harga tiket pesawat domestik India dengan fitur:
 
 ---
 
-## Struktur Project
-```
-flight-price-prediction/
-├── flight_price_prediction.ipynb
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## Author
 **Rhey Indraswari**  
 [GitHub](https://github.com/riswari)
