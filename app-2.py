@@ -140,7 +140,7 @@ with st.container():
         
     st.subheader("Durasi")
     duration = duration_map.get((source_city, destination_city, stops), 3.0)
-    st.info(f"✈️ Estimasi durasi penerbangan: {duration} jam")
+    st.info(f"Estimasi durasi penerbangan: {duration} jam")
 
     st.subheader("Jangka Waktu Menuju Keberangkatan")
     days_left = st.number_input("Days Left (for Departure)", min_value=1, max_value=50, value=15, step=1)
