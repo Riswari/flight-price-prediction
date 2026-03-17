@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import os
 from huggingface_hub import hf_hub_download
 
 # 1. Setup Pemetaan Durasi untuk Kombinasi Kota Asal, Kota Tujuan, dan Jumlah Transit
@@ -112,7 +111,7 @@ model = load_model()
 
 # 3. Merancang Antarmuka Pengguna (UI) Reaktif
 st.set_page_config(page_title="Prediksi Harga Tiket Pesawat", layout="centered")
-st.title("Sistem Prediksi Harga Tiket Pesawat ✈️")
+st.title("Sistem Prediksi Harga Tiket Pesawat")
 st.markdown("Masukkan parameter penerbangan di bawah ini. Mesin akan mengeksekusi arsitektur Random Forest untuk memprediksi harga tiket secara akurat.")
 
 # Menghapus st.form agar UI menjadi dinamis/reaktif
